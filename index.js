@@ -2,17 +2,17 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const router = require("./Router/router");
-
+require("./DB/connection")
 const umServer = express();
 
 umServer.use(cors());
 umServer.use(express.json());
 umServer.use(router);
 
-const PORT = 3000;
+const PORT = 4000;
 
 umServer.listen(PORT, () => {
-  console.log("PF Server started on port" + PORT);
+  console.log("User Server started on port " + PORT);
 });
 
 umServer.get("/"),
@@ -20,6 +20,6 @@ umServer.get("/"),
     res
       .status(200)
       .send(
-        "<h1 style=color:red>Project Fair server running and wait to client request</h1>"
+        "<h1 style=color:red>Lab Management server running and wait to client request</h1>"
       );
   };
