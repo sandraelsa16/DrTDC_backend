@@ -1,19 +1,15 @@
 const mongoose = require("mongoose")
 
-const appointmentSchema = new mongoose.Schema({
-    initial:{
-        type:String,
-        require:true
-    },
+const drappointmentSchema = new mongoose.Schema({
     name:{
         type:String,
         require:true
     },
-    phnnum:{
+    age:{
         type:Number,
         require:true
     },
-    age:{
+    phnnum:{
         type:Number,
         require:true
     },
@@ -29,18 +25,6 @@ const appointmentSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    address:{
-        type:String,
-        require:true
-    },
-    drname:{
-        type:String,
-        require:true
-    },
-    area:{
-        type:String,
-        require:true
-    },
     userId:{
         type:String,
         require:true
@@ -48,6 +32,6 @@ const appointmentSchema = new mongoose.Schema({
     
 })
 
-const homeappointments = mongoose.model("homeappointments",appointmentSchema)
+const drappointments = mongoose.model("drappointments",drappointmentSchema)
 
-module.exports=homeappointments
+module.exports=drappointments

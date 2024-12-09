@@ -1,5 +1,5 @@
 const users = require("../models/userSchema");
-// const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 exports.register = async (req, res) => {
   console.log("inside user reg function");
@@ -11,7 +11,7 @@ exports.register = async (req, res) => {
         res.status(406).json("Patient already exists")
     }else{
         const newUser = new users({
-            firstname,lastname,email,password
+            firstname,lastname,phnnum,email,password
         })
         await newUser.save()
         res.status(200).json(newUser)
@@ -20,3 +20,5 @@ exports.register = async (req, res) => {
     res.status(401).json(err)
   }
 };
+
+ 

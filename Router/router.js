@@ -1,14 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const adminController = require("../Controller/adminController");
-const homeAppController = require("../Controller/homeAppController")
+const AppController = require("../Controller/appointmentController")
 const userController= require("../Controller/userController")
 
 //login
 router.post("/admin", adminController.login);
 
 //addhomeAppointment
-router.post("/appointment",homeAppController.homeAppointment)
+router.post("/appointment",AppController.homeAppointment)
+
+//add doctor appointment
+router.post("/drappointment",AppController.drAppointment)
 
 
 //userregister
