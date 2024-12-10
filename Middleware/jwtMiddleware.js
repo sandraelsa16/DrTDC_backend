@@ -12,8 +12,10 @@ const jwtMiddleware = (req, res, next) => {
     } else {
       res.status(401).json("please provide a token");
     }
-  } catch {
-    res.status(403).json("please login");
+  } catch(err) {
+    // res.status(403).json("please login");
+    console.log(err);
+    
   }
 };
 
